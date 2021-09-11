@@ -1,1 +1,11 @@
 Dataset link: https://drive.google.com/file/d/1AUhwdIjuvNC9abyll66ooHl5ikgJ3C3V/view?usp=sharing
+
+The prediction of the positions and speeds of 600 satellites is the goal of our project.
+The number of resident space objects has roughly doubled in the last two decades. Hundreds of satellites are launched per month, compared to only a few in a year. Thousands of new satellites are being launched in "mega-constellations," posing a great risk of collision. The critical issue here is satellite orbit tracking that is both reliable and precise over lengthy periods of time. The goal is to reduce the chance of collisions by using machine learning algorithms to anticipate the positions and speeds of 600 satellites in orbit around the Earth.
+
+First, we connected our dataset containing information about satellites' true and simulated positions to Google Colab for our machine learning problem.
+Following the collection of the appropriate dataset, the data must be cleaned and checked to ensure that it is ready for model building. We checked the dataset for null values and missing values and found none in ours. Then we eliminated two columns “epoch” and “id” which includes irrelevant information for the task. After that, we transformed the “timestamp” datatype to float64 and performed level encoding. We used column distribution, correlation matrix, scatter matrix, and pair plot to visualize the processed data. 
+After completing the preprocessing, the next task is splitting the features for training and testing purposes. We've divided our features into train and test sets in terms of independent and dependent variables. Since we are predicting a continuous-valued attribute associated with an object, we used a few regression models such as linear regression, ridge, lasso, and random forest. Then we experimented with a preset method called "predict" on our model variable for testing purposes.
+
+We used accuracy score, root mean squared error, mean absolute error, and mean squared error to demonstrate our model's performance. Based on these findings, we concluded that the random forest regressor outperformed the other models, with an accuracy score of 97 percent in comparison to 90-95 percent for all the other models.
+
